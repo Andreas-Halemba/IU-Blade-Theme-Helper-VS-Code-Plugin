@@ -2,7 +2,7 @@
   "name": "iu-blade-theme-helper",
   "displayName": "IU Blade Theme Helper",
   "description": "A VS Code extension to copy Laravel Blade files to brand-specific folders.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "AndreasHal",
   "icon": "images/icon.jpg",
   "repository": {
@@ -42,7 +42,7 @@
       "editor/title": [
         {
           "command": "iuBladeThemeHelper.copyBladeToTheme",
-          "when": "editorLangId == blade",
+          "when": "editorLangId == blade  && !iuBladeThemeHelper.isInThemesDir",
           "group": "navigation"
         }
       ]
