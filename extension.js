@@ -12,7 +12,7 @@ const path = require("path");
  */
 function activate(context) {
   let disposable = vscode.commands.registerCommand(
-    "extension.copyBladeToTheme",
+    "iuBladeThemeHelper.copyBladeToTheme",
     function () {
       const currentFile = vscode.window.activeTextEditor.document.fileName;
 
@@ -22,7 +22,7 @@ function activate(context) {
       }
 
       // Retrieve the custom themes folder setting
-      const config = vscode.workspace.getConfiguration("blade-themer");
+      const config = vscode.workspace.getConfiguration("iuBladeThemeHelper");
       const themesFolder = config.get("themesFolder", "resources/themes");
 
       // Define the themes directory based on the setting
@@ -31,6 +31,13 @@ function activate(context) {
       // Check if themes directory exists
       if (!fs.existsSync(themesDir)) {
         vscode.window.showErrorMessage("Themes directory does not exist.");
+        return;
+      }
+
+      if (currentFile.startsWith(themesDir)) {
+        vscode.window.showWarningMessage(
+          "The current file is already located in a themes folder."
+        );
         return;
       }
 
@@ -58,6 +65,14 @@ function activate(context) {
             currentFile
           );
           const targetPath = path.join(themesDir, brand, relativePath);
+
+          // Check if the file already exists in the target directory
+          if (fs.existsSync(targetPath)) {
+            vscode.window.showWarningMessage(
+              `File already exists in the target directory: ${targetPath}`
+            );
+            return; // Exit the function without copying the file
+          }
 
           // Ensure directories exist
           const targetDir = path.dirname(targetPath);

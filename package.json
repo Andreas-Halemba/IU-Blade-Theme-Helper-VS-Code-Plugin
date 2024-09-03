@@ -2,7 +2,7 @@
   "name": "iu-blade-theme-helper",
   "displayName": "IU Blade Theme Helper",
   "description": "A VS Code extension to copy Laravel Blade files to brand-specific folders.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "AndreasHal",
   "icon": "images/icon.jpg",
   "repository": {
@@ -19,9 +19,9 @@
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "Your Extension Settings",
+      "title": "IU Blade Theme Helper Settings",
       "properties": {
-        "yourExtension.themesFolder": {
+        "iuBladeThemeHelper.themesFolder": {
           "type": "string",
           "default": "resources/themes",
           "description": "Path to the themes folder relative to the workspace root."
@@ -30,24 +30,39 @@
     },
     "commands": [
       {
-        "command": "extension.copyBladeToTheme",
-        "title": "Copy Blade File to Theme"
+        "command": "iuBladeThemeHelper.copyBladeToTheme",
+        "title": "Copy Blade File to Theme",
+        "icon": {
+          "light": "images/copy-light.svg",
+          "dark": "images/copy-dark.svg"
+        }
       }
-    ]
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "iuBladeThemeHelper.copyBladeToTheme",
+          "when": "editorLangId == blade",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "activationEvents": [],
   "scripts": {
+    "publish": "vsce package",
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.92.0",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
+    "@types/vscode": "^1.92.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
     "eslint": "^8.57.0",
     "typescript": "^5.4.5",
-    "@vscode/test-cli": "^0.0.9",
-    "@vscode/test-electron": "^2.4.0"
+    "vsce": "^2.15.0"
   }
 }
