@@ -1,0 +1,47 @@
+{
+  "name": "blade-themer",
+  "displayName": "Blade Themer",
+  "description": "",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Your Extension Settings",
+      "properties": {
+        "yourExtension.themesFolder": {
+          "type": "string",
+          "default": "resources/themes",
+          "description": "Path to the themes folder relative to the workspace root."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "extension.copyBladeToTheme",
+        "title": "Copy Blade File to Theme"
+      }
+    ]
+  },
+  "activationEvents": [],
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.92.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}
