@@ -1,8 +1,14 @@
 {
-  "name": "blade-themer",
-  "displayName": "Blade Themer",
-  "description": "",
-  "version": "0.0.2",
+  "name": "iu-blade-theme-helper",
+  "displayName": "IU Blade Theme Helper",
+  "description": "A VS Code extension to copy Laravel Blade files to brand-specific folders.",
+  "version": "0.0.1",
+  "publisher": "AndreasHal",
+  "icon": "images/icon.jpg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Andreas-Halemba/IU-Blade-Theme-Helper-VS-Code-Plugin"
+  },
   "engines": {
     "vscode": "^1.92.0"
   },

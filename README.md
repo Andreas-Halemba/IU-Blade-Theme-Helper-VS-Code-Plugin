@@ -53,6 +53,10 @@ This extension contributes the following settings:
 
 - The extension currently assumes that your Laravel project is structured in a certain way. If your structure varies significantly, the extension may not work as expected.
 
-### License
+## Contributing
 
-MIT
+Contributions are welcome! Please open an issue or submit a pull request on [GitHub](https://github.com/Andreas-Halemba/IU-Blade-Theme-Helper-VS-Code-Plugin).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
