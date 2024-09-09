@@ -40,14 +40,14 @@ If your themes folder is located in a different directory, for example, `custom/
 
 ```json
 {
-    "yourExtension.themesFolder": "custom/themes"
+    "iuBladeThemeHelper.themesFolder": "custom/themes"
 }
 ```
 ### Extension Settings
 
 This extension contributes the following settings:
 
-- yourExtension.themesFolder: Specifies the relative path to the themes folder where brand-specific folders are located. The default is resources/themes.
+- iuBladeThemeHelper.themesFolder: Specifies the relative path to the themes folder where brand-specific folders are located. The default is resources/themes.
 
 ### Known Issues
 
